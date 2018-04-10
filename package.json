@@ -1,0 +1,15 @@
+{
+  "name": "rest-api-mongodb-express-node",
+  "version": "1.0.0",
+  "description": "## What is this? In this tutorial we will write a REST API using MongoDB, Express.js and Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}
