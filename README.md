@@ -77,7 +77,7 @@ For this tutorial we will use route parameter feature of express.js. For more in
 We will implement the query of a todo entry by using the following URL: `/todos/:todoid`.
 Route parameters are named URL segments that are used to capture the values specified at their position in the URL. In our example `todoid` is a route parameter,
 When this kind of URL is accessed, we will return a dummy todo entry which we will generate on the fly.
-We need to modify routes.js:
+We need to modify `routes.js`:
 
 ```javascript
 var routes = function (app) {
@@ -108,6 +108,8 @@ node index.js
 ```
 
 Enter `http://localhost:3000/todos/123` to the URL in a browser.
+
+This is just a very simple tutorial and test app to show the basics of using express routes and to return data in JSON format. 
 
 ## What are Future Plans for this Project?
   * Enhance with further operations
