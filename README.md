@@ -14,34 +14,25 @@ cd rest-api-express-node
 npm init -y
 ```
 
-### Adding body-parser
-First we need to install the packages: `express.js` and `body-parser`. The `body-parser` package is a Node.js body parsing middleware, which parses incoming request bodies.
+### Install express.js
 
 ```
-npm install --save express body-parser
+npm install --save express
 ```
 
-We need to include body-parser and configure it in `index.js`. We will also use express.js:
+The implementation of a simple web server looks like the following: 
 
 ```javascript
 var express = require("express");
-var bodyParser = require("body-parser");
 var app = express();
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 var server = app.listen(3000, function () {
     console.log(`Example app listening on port {server.address().port}!`);
 });
 ```
 
-Some comments.
-The `bodyParser.json()` returns middleware that only parses json. The `bodyParser.urlencoded({ extended: true })` call returns a middleware that only parses urlencoded bodies. The `extended` option allows to choose between parsing the URL-encoded data with the querystring library (when false) or the qs library (when true). The "extended" syntax allows for rich objects and arrays to be encoded into the URL-encoded format, allowing for a JSON-like experience with URL-encoded. For more information, please see the qs library. A new body object containing the parsed data is populated on the request object after the middleware (i.e. req.body). This object will contain key-value pairs, where the value can be a string or array (when extended is false), or any type (when extended is true). For more information see [body-parser package on npm](https://www.npmjs.com/package/body-parser).
-With `app.use()` we tell express that we bind an application-level middleware to the instance. For more information see the [express.js documentation](http://expressjs.com/en/guide/using-middleware.html).
-
 ### Routing
-We need to specify routes for the web server. For this we will use another `js` file, `routes.js`.
+We need to specify routes for the web server. For this we will use another javascript file, `routes.js`.
 
 ```javascript
 var routes = function (app) {
@@ -58,12 +49,8 @@ We will need to include this file in our `index.js`. The updated `index.js` look
 
 ```javascript
 var express = require("express");
-var bodyParser = require("body-parser");
 var routes = require("./routes.js");
 var app = express();
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 routes(app);
 
