@@ -38,7 +38,7 @@ var server = app.listen(3000, function () {
 
 Some comments.
 The `bodyParser.json()` returns middleware that only parses json. The `bodyParser.urlencoded({ extended: true })` call returns a middleware that only parses urlencoded bodies. The `extended` option allows to choose between parsing the URL-encoded data with the querystring library (when false) or the qs library (when true). The "extended" syntax allows for rich objects and arrays to be encoded into the URL-encoded format, allowing for a JSON-like experience with URL-encoded. For more information, please see the qs library. A new body object containing the parsed data is populated on the request object after the middleware (i.e. req.body). This object will contain key-value pairs, where the value can be a string or array (when extended is false), or any type (when extended is true). For more information see [body-parser package on npm](https://www.npmjs.com/package/body-parser).
-With `app.use()` we tell express that we bind an application-level middleware to the instance. For more information see the [express.js documentation] (http://expressjs.com/en/guide/using-middleware.html).
+With `app.use()` we tell express that we bind an application-level middleware to the instance. For more information see the [express.js documentation](http://expressjs.com/en/guide/using-middleware.html).
 
 ### Routing
 We need to specify routes for the web server. For this we will use another `js` file, `routes.js`.
